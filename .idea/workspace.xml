@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="810f0a09-ef85-489c-9bd7-670b5c7ca5b7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/Additions/TODO_1_conference.py" afterPath="$PROJECT_DIR$/Lesson_4/Additions/TODO_1_conference.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/Additions/TODO_1_models.py" afterPath="$PROJECT_DIR$/Lesson_4/Additions/TODO_1_models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/Additions/TODO_2_conference.py" afterPath="$PROJECT_DIR$/Lesson_4/Additions/TODO_2_conference.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/Additions/TODO_2_models.py" afterPath="$PROJECT_DIR$/Lesson_4/Additions/TODO_2_models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/Additions/TODO_3_conference.py" afterPath="$PROJECT_DIR$/Lesson_4/Additions/TODO_3_conference.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/Additions/TODO_4_conference.py" afterPath="$PROJECT_DIR$/Lesson_4/Additions/TODO_4_conference.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/Additions/TODO_5_conference.py" afterPath="$PROJECT_DIR$/Lesson_4/Additions/TODO_5_conference.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/Additions/TODO_6_conference.py" afterPath="$PROJECT_DIR$/Lesson_4/Additions/TODO_6_conference.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/Additions/TODO_6_models.py" afterPath="$PROJECT_DIR$/Lesson_4/Additions/TODO_6_models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/Additions/TODO_7_conference.py" afterPath="$PROJECT_DIR$/Lesson_4/Additions/TODO_7_conference.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/00_Conference_Central/static/js/app.js" afterPath="$PROJECT_DIR$/Lesson_4/00_Conference_Central/static/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/00_Conference_Central/app.yaml" afterPath="$PROJECT_DIR$/Lesson_4/00_Conference_Central/app.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/00_Conference_Central/conference.py" afterPath="$PROJECT_DIR$/Lesson_4/00_Conference_Central/conference.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/00_Conference_Central/models.py" afterPath="$PROJECT_DIR$/Lesson_4/00_Conference_Central/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_4/00_Conference_Central/settings.py" afterPath="$PROJECT_DIR$/Lesson_4/00_Conference_Central/settings.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/appengine_config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_app.yaml" afterPath="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_app.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_conference.py" afterPath="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_conference.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_main.py" afterPath="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_models.py" afterPath="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/Additions/TODO_2_app.yaml" afterPath="$PROJECT_DIR$/Lesson_5/Additions/TODO_2_app.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/Additions/TODO_2_conference.py" afterPath="$PROJECT_DIR$/Lesson_5/Additions/TODO_2_conference.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/Additions/TODO_2_main.py" afterPath="$PROJECT_DIR$/Lesson_5/Additions/TODO_2_main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/Additions/TODO_3_cron.yaml" afterPath="$PROJECT_DIR$/Lesson_5/Additions/TODO_3_cron.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/static/js/app.js" afterPath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/static/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/app.yaml" afterPath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/app.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/conference.py" afterPath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/conference.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/cron.yaml" afterPath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/cron.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/index.yaml" afterPath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/index.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/main.py" afterPath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/models.py" afterPath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/settings.py" afterPath="$PROJECT_DIR$/Lesson_5/00_Conference_Central/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ud858.iws" />
@@ -39,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="conference.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Lesson_4/00_Conference_Central/conference.py">
+      <file leaf-file-name="conference.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/conference.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64689654">
-              <caret line="425" column="40" selection-start-line="425" selection-start-column="40" selection-end-line="425" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="135" column="39" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
               <folding>
                 <element signature="e#282#311#0" expanded="true" />
               </folding>
@@ -51,30 +53,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conference_api.partial.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lesson_4/Additions/conference_api.partial.txt">
-          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
+      <file leaf-file-name="cron.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/cron.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-84.82758">
-              <caret line="164" column="4" selection-start-line="164" selection-start-column="4" selection-end-line="176" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lesson_4/00_Conference_Central/static/js/controllers.js">
+      <file leaf-file-name="appengine_config.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/appengine_config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.592592">
-              <caret line="420" column="57" selection-start-line="420" selection-start-column="51" selection-end-line="420" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.yaml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/app.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37241378">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+              <folding>
+                <element signature="e#243#257#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -115,6 +153,23 @@
         <option value="$PROJECT_DIR$/Lesson_4/00_Conference_Central/models.py" />
         <option value="$PROJECT_DIR$/Lesson_4/Additions/TODO_7_conference.py" />
         <option value="$PROJECT_DIR$/Lesson_4/00_Conference_Central/conference.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/00_Conference_Central/static/js/app.js" />
+        <option value="$PROJECT_DIR$/Lesson_5/00_Conference_Central/settings.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_app.yaml" />
+        <option value="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_models.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/00_Conference_Central/models.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_conference.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/00_Conference_Central/main.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/00_Conference_Central/index.yaml" />
+        <option value="$PROJECT_DIR$/Lesson_5/Additions/TODO_1_main.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/Additions/TODO_2_app.yaml" />
+        <option value="$PROJECT_DIR$/Lesson_5/Additions/TODO_2_conference.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/Additions/TODO_2_main.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/00_Conference_Central/conference.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/Additions/TODO_3_cron.yaml" />
+        <option value="$PROJECT_DIR$/Lesson_5/00_Conference_Central/cron.yaml" />
+        <option value="$PROJECT_DIR$/Lesson_5/00_Conference_Central/appengine_config.py" />
+        <option value="$PROJECT_DIR$/Lesson_5/00_Conference_Central/app.yaml" />
       </list>
     </option>
   </component>
@@ -204,11 +259,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Lesson_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Additions" />
+              <option name="myItemId" value="Lesson_5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -222,7 +273,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Lesson_4" />
+              <option name="myItemId" value="Lesson_5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -240,7 +291,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Lesson_4" />
+              <option name="myItemId" value="Lesson_5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -587,12 +638,12 @@
       <updated>1441122559577</updated>
       <workItem from="1441122561307" duration="389000" />
       <workItem from="1441123444368" duration="11000" />
-      <workItem from="1441123477752" duration="19347000" />
+      <workItem from="1441123477752" duration="23476000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19747000" />
+    <option name="totallyTimeSpent" value="23876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -635,7 +686,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -643,90 +696,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Lesson_2/000_Hello_Endpoints/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson_2/000_Hello_Endpoints/helloworld_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#212#228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson_2/000_Hello_Endpoints/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson_2/000_Hello_Endpoints/helloworld_api.py">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#212#228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson_2/000_Hello_Endpoints/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57931036">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson_2/000_Hello_Endpoints/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17118402">
-          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson_2/000_Hello_Endpoints/static/hello.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2924138">
-          <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lesson_2/000_Hello_Endpoints/helloworld_api.py">
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
@@ -902,14 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/index.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lesson_4/Additions/TODO_4_conference.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -966,14 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/conference.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2413793">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lesson_4/00_Conference_Central/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1186206">
@@ -1011,11 +964,169 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lesson_4/00_Conference_Central/conference.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64689654">
+        <state vertical-scroll-proportion="0.0">
           <caret line="425" column="40" selection-start-line="425" selection-start-column="40" selection-end-line="425" selection-end-column="40" />
           <folding>
             <element signature="e#282#311#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33655173">
+          <caret line="88" column="93" selection-start-line="88" selection-start-column="93" selection-end-line="88" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28965518">
+          <caret line="14" column="90" selection-start-line="14" selection-start-column="90" selection-end-line="14" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/Additions/TODO_1_app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/Additions/TODO_1_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/Additions/TODO_1_conference.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/index.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.020689655">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/Additions/TODO_1_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/Additions/TODO_2_app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/Additions/TODO_2_conference.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/Additions/TODO_2_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/IntelliJIdea14/python_stubs/348993582/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3324138">
+          <caret line="500" column="4" selection-start-line="500" selection-start-column="4" selection-end-line="500" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding>
+            <element signature="e#243#257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/Additions/TODO_3_cron.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/conference.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="135" column="39" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+          <folding>
+            <element signature="e#282#311#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/cron.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/appengine_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/00_Conference_Central/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37241378">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
