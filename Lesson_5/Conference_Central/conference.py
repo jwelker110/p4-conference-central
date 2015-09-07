@@ -398,10 +398,14 @@ class ConferenceApi(remote.Service):
             raise endpoints.UnauthorizedException('Authorization required')
 
         wl = ndb.Key(SessionWishlist, getUserId(user)).get()
-        sess_keys = [ndb.Key(urlsafe=wl_sess_key) for wl_sess_key in wl.session_keys]
-        q = ndb.get_multi(sess_keys)
+        if wl is not None:
+            sess_keys = [ndb.Key(urlsafe=wl_sess_key) for wl_sess_key in wl.session_keys]
+            q = ndb.get_multi(sess_keys)
+            return ConferenceSessionForms(
+                items=[self._copySessionToForm(sess) for sess in q]
+            )
         return ConferenceSessionForms(
-            items=[self._copySessionToForm(sess) for sess in q]
+            items=[]
         )
 
 # - - - Session Stuff - - - - - - - - - - - - - - - - - - - -
