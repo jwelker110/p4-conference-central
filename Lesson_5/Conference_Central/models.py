@@ -114,7 +114,7 @@ class Speaker(ndb.Model):
 class ConferenceSession(ndb.Model):
     name = ndb.StringProperty(required=True)
     speakers = ndb.StructuredProperty(Speaker, repeated=True)
-    highlights = ndb.StringProperty()
+    highlights = ndb.StringProperty(repeated=True)
     date = ndb.DateProperty()
     start_time = ndb.TimeProperty()
     duration_in_minutes = ndb.IntegerProperty()
@@ -123,8 +123,8 @@ class ConferenceSession(ndb.Model):
 class ConferenceSessionForm(messages.Message):
     """ConferenceSessionForm"""
     name = messages.StringField(1)
-    highlights = messages.StringField(2)
-    speakers = messages.StringField(3, repeated=True)
+    speakers = messages.StringField(2, repeated=True)
+    highlights = messages.StringField(3, repeated=True)
     date = messages.StringField(4)
     start_time = messages.StringField(5)
     duration_in_minutes = messages.IntegerField(6)
