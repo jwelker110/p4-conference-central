@@ -41,6 +41,8 @@ from models import ConferenceSession
 from models import ConferenceSessionForm
 from models import ConferenceSessionForms
 from models import Speaker
+from models import SessionWishlist
+from models import SessionWishlistForm
 
 from utils import getUserId
 
@@ -71,8 +73,8 @@ OPERATORS = {
 FIELDS =    {
             'CITY': 'city',
             'TOPIC': 'topics',
-            'MONTH': 'month',
-            'MAX_ATTENDEES': 'maxAttendees',
+            # 'MONTH': 'month',
+            'MAX_ATTENDEES': 'maxAttendees'
             }
 
 CONF_GET_REQUEST = endpoints.ResourceContainer(
@@ -144,6 +146,7 @@ class ConferenceApi(remote.Service):
         data = {field.name: getattr(request, field.name) for field in request.all_fields()}
         del data['websafeKey']
         del data['organizerDisplayName']
+        del data['month']
 
         # add default values for those missing (both data model & outbound Message)
         for df in DEFAULTS:
@@ -154,9 +157,7 @@ class ConferenceApi(remote.Service):
         # convert dates from strings to Date objects; set month based on start_date
         if data['startDate']:
             data['startDate'] = datetime.strptime(data['startDate'][:10], "%Y-%m-%d").date()
-            data['month'] = data['startDate'].month
-        else:
-            data['month'] = 0
+
         if data['endDate']:
             data['endDate'] = datetime.strptime(data['endDate'][:10], "%Y-%m-%d").date()
 
@@ -191,6 +192,8 @@ class ConferenceApi(remote.Service):
 
         # copy ConferenceForm/ProtoRPC Message into dict
         data = {field.name: getattr(request, field.name) for field in request.all_fields()}
+        del data['websafeKey']
+        del data['organizerDisplayName']
 
         # update existing conference
         conf = ndb.Key(urlsafe=request.websafeConferenceKey).get()
@@ -213,8 +216,6 @@ class ConferenceApi(remote.Service):
                 # special handling for dates (convert string to Date)
                 if field.name in ('startDate', 'endDate'):
                     data = datetime.strptime(data, "%Y-%m-%d").date()
-                    if field.name == 'startDate':
-                        conf.month = data.month
                 # write to Conference object
                 setattr(conf, field.name, data)
         conf.put()
@@ -343,6 +344,65 @@ class ConferenceApi(remote.Service):
                 conferences]
         )
 
+#-----------WISHLIST-----------------------------------------------
+
+    @endpoints.method(SessionWishlistForm, SessionWishlistForm,
+                      path='addSessionToWishlist',
+                      http_method='POST',
+                      name='addSessionToWishlist')
+    def addSessionToWishlist(self, request):
+        """adds the session to the user's list of sessions they are interested in attending
+
+        """
+        user = endpoints.get_current_user()
+        if not user:
+            raise endpoints.UnauthorizedException('Authorization required')
+
+        # retrieve the session
+        sess = ndb.Key(urlsafe=request.session_key).get()
+
+        if sess is None:
+            raise endpoints.NotFoundException(
+                "No session for the given key was found"
+            )
+
+        # retrieve the user's wishlist if one exists
+        wl = ndb.Key(SessionWishlist, getUserId(user)).get()
+        if wl is None:
+            wl_key = ndb.Key(SessionWishlist, getUserId(user))
+            wl = SessionWishlist(
+                key=wl_key,
+                session_keys=[request.session_key]
+            )
+            wl.put()
+            return request
+        # if the wishlist exists then just add the sess to it
+        wl_sess_keys = wl.session_keys
+        if request.session_key not in wl.session_keys:
+            wl_sess_keys.append(request.session_key)
+            wl.session_keys = wl_sess_keys
+            wl.put()
+        wl.key.delete()
+        return SessionWishlistForm(
+            session_key=request.session_key
+        )
+
+    @endpoints.method(message_types.VoidMessage, ConferenceSessionForms,
+                      path='getSessionsInWishlist',
+                      http_method='GET',
+                      name='getSessionsInWishlist')
+    def getSessionsInWishlist(self, request):
+        """query for all the sessions in a conference that the user is interested in"""
+        user = endpoints.get_current_user()
+        if not user:
+            raise endpoints.UnauthorizedException('Authorization required')
+
+        wl = ndb.Key(SessionWishlist, getUserId(user)).get()
+        sess_keys = [ndb.Key(urlsafe=wl_sess_key) for wl_sess_key in wl.session_keys]
+        q = ndb.get_multi(sess_keys)
+        return ConferenceSessionForms(
+            items=[self._copySessionToForm(sess) for sess in q]
+        )
 
 # - - - Session Stuff - - - - - - - - - - - - - - - - - - - -
     def _copySessionToForm(self, sess):
@@ -361,6 +421,8 @@ class ConferenceApi(remote.Service):
                 setattr(sf, field.name, sess.key.urlsafe())
         sf.check_initialized()
         return sf
+
+    #---------Custom query #1--------------------------------------
 
     @endpoints.method(CONF_SESS_GET_REQUEST, ConferenceSessionForms,
                       path='getConferenceSessions/{websafeConferenceKey}',
@@ -415,6 +477,13 @@ class ConferenceApi(remote.Service):
 
         data = {field.name: getattr(request, field.name) for field in request.all_fields()}
         del data['parent_key']
+        if data['start_time']:
+            time = data['start_time'].split(':')
+            hour = int(time[0])
+            minute = int(time[1])
+            data['start_time'] = time(hour, minute)
+        if data['date']:
+            data['date'] = datetime.strptime(data['date'][:10], "%Y-%m-%d").date()
         data['speakers'] = []
         for s in request.speakers:
             data['speakers'].append(Speaker(name=s))
@@ -429,7 +498,7 @@ class ConferenceApi(remote.Service):
     @endpoints.method(ConferenceSessionForm, ConferenceSessionForm, path='createSession',
                       http_method='POST', name='createSession')
     def createSession(self, request):
-        """Create a Session"""
+        """Create a Session. Requires the conference key passed in."""
         return self._createSessionObject(request)
 
 # - - - Profile objects - - - - - - - - - - - - - - - - - - -

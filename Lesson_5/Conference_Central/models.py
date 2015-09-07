@@ -56,7 +56,7 @@ class Conference(ndb.Model):
     topics          = ndb.StringProperty(repeated=True)
     city            = ndb.StringProperty()
     startDate       = ndb.DateProperty()
-    month           = ndb.IntegerProperty() # TODO: do we need for indexing like Java?
+    month           = ndb.ComputedProperty(lambda self: self.startDate.month)
     endDate         = ndb.DateProperty()
     maxAttendees    = ndb.IntegerProperty()
     seatsAvailable  = ndb.IntegerProperty()
@@ -115,21 +115,27 @@ class ConferenceSession(ndb.Model):
     name = ndb.StringProperty(required=True)
     speakers = ndb.StructuredProperty(Speaker, repeated=True)
     highlights = ndb.StringProperty()
-    start_time = ndb.DateProperty()
+    date = ndb.DateProperty()
+    start_time = ndb.TimeProperty()
     duration_in_minutes = ndb.IntegerProperty()
     type = ndb.StringProperty()
-    location = ndb.StringProperty()
 
 class ConferenceSessionForm(messages.Message):
     """ConferenceSessionForm"""
     name = messages.StringField(1)
     highlights = messages.StringField(2)
     speakers = messages.StringField(3, repeated=True)
-    start_time = messages.StringField(4)
-    duration_in_minutes = messages.IntegerField(5)
-    type = messages.StringField(6)
-    location = messages.StringField(7)
+    date = messages.StringField(4)
+    start_time = messages.StringField(5)
+    duration_in_minutes = messages.IntegerField(6)
+    type = messages.StringField(7)
     parent_key = messages.StringField(8)
 
 class ConferenceSessionForms(messages.Message):
     items = messages.MessageField(ConferenceSessionForm, 1, repeated=True)
+
+class SessionWishlist(ndb.Model):
+    session_keys = ndb.StringProperty(repeated=True)
+
+class SessionWishlistForm(messages.Message):
+    session_key = messages.StringField(1)
