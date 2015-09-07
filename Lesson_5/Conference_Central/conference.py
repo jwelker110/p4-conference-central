@@ -102,6 +102,11 @@ TYPE_SESS_GET_REQUEST = endpoints.ResourceContainer(
     websafeType=messages.StringField(1),
     websafeConferenceKey=messages.StringField(2)
 )
+
+HIGHLIGHT_SESS_GET_REQUEST = endpoints.ResourceContainer(
+    message_types.VoidMessage,
+    websafeHighlight=messages.StringField(1)
+)
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -427,6 +432,21 @@ class ConferenceApi(remote.Service):
         return sf
 
     #---------Custom query #1--------------------------------------
+    @endpoints.method(HIGHLIGHT_SESS_GET_REQUEST, ConferenceSessionForms,
+                      path='getConferenceSessionsByHighlight/{websafeHighlight}',
+                      http_method='GET',
+                      name='getConferenceSessionsByHighlight')
+    def getConferenceSessionsByHighlight(self, request):
+        """Query for sessions with the given highlight"""
+        q = ConferenceSession.query(ConferenceSession.highlights.IN([request.websafeHighlight]))
+        if q is not None:
+            return ConferenceSessionForms(
+                items=[self._copySessionToForm(sess) for sess in q]
+            )
+        return ConferenceSessionForms(
+            items=[]
+        )
+
 
     @endpoints.method(CONF_SESS_GET_REQUEST, ConferenceSessionForms,
                       path='getConferenceSessions/{websafeConferenceKey}',
