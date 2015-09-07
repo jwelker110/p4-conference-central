@@ -447,7 +447,6 @@ class ConferenceApi(remote.Service):
             items=[]
         )
 
-
     @endpoints.method(CONF_SESS_GET_REQUEST, ConferenceSessionForms,
                       path='getConferenceSessions/{websafeConferenceKey}',
                       http_method='GET',
@@ -672,10 +671,38 @@ class ConferenceApi(remote.Service):
             names[profile.key.id()] = profile.displayName
 
         # return set of ConferenceForm objects per Conference
-        return ConferenceForms(items=[self._copyConferenceToForm(conf, names[conf.organizerUserId])\
-         for conf in conferences]
+        return ConferenceForms(
+            items=[self._copyConferenceToForm(conf, names[conf.organizerUserId]) for conf in conferences]
         )
 
+    #---------Custom query #2--------------------------------------
+    @endpoints.method(HIGHLIGHT_SESS_GET_REQUEST, ConferenceForms,
+                      path='getConferencesWithSessionHighlights/{websafeHighlight}',
+                      http_method='GET',
+                      name='getConferencesWithSessionHighlights')
+    def getConferencesWithSessionHighlights(self, request):
+        """Query for conferences that have a session with the given highlights"""
+        q = ConferenceSession.query(ConferenceSession.highlights.IN([request.websafeHighlight]))
+
+        if q is not None:
+            # grab the confs for the sessions
+            confs = [sess.key.parent().get() for sess in q]
+
+            # grab organizers of each conference
+            organizers = [ndb.Key(Profile, conf.organizerUserId) for conf in confs]
+            profiles = ndb.get_multi(organizers)
+
+            # put display names in dict
+            names = {}
+            for profile in profiles:
+                names[profile.key.id()] = profile.displayName
+
+            return ConferenceForms(
+                items=[self._copyConferenceToForm(conf, names[conf.organizerUserId]) for conf in confs]
+            )
+        return ConferenceForms(
+            items=[]
+        )
 
     @endpoints.method(CONF_GET_REQUEST, BooleanMessage,
             path='conference/{websafeConferenceKey}',
