@@ -424,6 +424,8 @@ class ConferenceApi(remote.Service):
                     setattr(sf, field.name, str(getattr(sess, field.name)))
                 elif field.name == 'speakers':
                     setattr(sf, field.name, [s.name for s in getattr(sess, field.name)])
+                elif field.name == 'start_time':
+                    setattr(sf, field.name, str(getattr(sess, field.name)))
                 else:
                     setattr(sf, field.name, getattr(sess, field.name))
             elif field.name == "websafeKey":
@@ -445,6 +447,28 @@ class ConferenceApi(remote.Service):
             )
         return ConferenceSessionForms(
             items=[]
+        )
+
+    #---------Task #3 filter query---------------------------------
+    @endpoints.method(message_types.VoidMessage, ConferenceSessionForms,
+                      path='getConferenceSessionsByFilters',
+                      http_method='GET',
+                      name='getConferenceSessionsByFilters')
+    def getConferenceSessionsByFilters(self, request):
+        """Query for the sessions that are not specified type
+        and are not running after specified time
+        """
+        # first get the sessions that don't have the specified type
+        # then get the sessions that don't run past the specified time
+        type_q = ConferenceSession.query(ConferenceSession.type != 'Workshop')
+        sessions=[]
+        for sess in type_q:
+            if sess.start_time is not None:
+                if sess.start_time < datetime.strptime('19:00', '%H:%M').time():
+                    # add the session to the sessions
+                    sessions.append(sess)
+        return ConferenceSessionForms(
+            items=[self._copySessionToForm(s) for s in sessions]
         )
 
     @endpoints.method(CONF_SESS_GET_REQUEST, ConferenceSessionForms,
@@ -501,10 +525,10 @@ class ConferenceApi(remote.Service):
         data = {field.name: getattr(request, field.name) for field in request.all_fields()}
         del data['parent_key']
         if data['start_time']:
-            time = data['start_time'].split(':')
-            hour = int(time[0])
-            minute = int(time[1])
-            data['start_time'] = time(hour, minute)
+            # assumed that start time is given in 24 hour time :)
+            t = datetime.strptime(data['start_time'], '%H:%M')
+            t = t.time()
+            data['start_time'] = t
         if data['date']:
             data['date'] = datetime.strptime(data['date'][:10], "%Y-%m-%d").date()
         data['speakers'] = []
