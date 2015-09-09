@@ -75,9 +75,13 @@ OPERATORS = {
 FIELDS =    {
             'CITY': 'city',
             'TOPIC': 'topics',
-            # 'MONTH': 'month',
+            'MONTH': 'month',
             'MAX_ATTENDEES': 'maxAttendees'
             }
+
+TIME_OPERATORS = {'BEFORE': '<',
+                  'DURING': '=',
+                  'AFTER': '>'}
 
 CONF_GET_REQUEST = endpoints.ResourceContainer(
     message_types.VoidMessage,
@@ -108,6 +112,13 @@ TYPE_SESS_GET_REQUEST = endpoints.ResourceContainer(
 HIGHLIGHT_SESS_GET_REQUEST = endpoints.ResourceContainer(
     message_types.VoidMessage,
     websafeHighlight=messages.StringField(1)
+)
+
+TYPE_TIME_GET_REQUEST = endpoints.ResourceContainer(
+    message_types.VoidMessage,
+    websafeType=messages.StringField(1),
+    websafeTime=messages.StringField(2),
+    websafeOperator=messages.StringField(3)
 )
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -452,7 +463,7 @@ class ConferenceApi(remote.Service):
         )
 
     #---------Task #3 filter query---------------------------------
-    @endpoints.method(message_types.VoidMessage, ConferenceSessionForms,
+    @endpoints.method(TYPE_TIME_GET_REQUEST, ConferenceSessionForms,
                       path='getConferenceSessionsByFilters',
                       http_method='GET',
                       name='getConferenceSessionsByFilters')
@@ -462,13 +473,32 @@ class ConferenceApi(remote.Service):
         """
         # first get the sessions that don't have the specified type
         # then get the sessions that don't run past the specified time
-        type_q = ConferenceSession.query(ConferenceSession.type != 'Workshop')
+        type_f = request.websafeType
+        print type_f
+        print '------------------------------'
+        time_f = request.websafeTime
+        print time_f
+        print '------------------------------'
+        eq_f = request.websafeOperator
+        print eq_f
+        print '------------------------------'
+        q = ConferenceSession.query(ConferenceSession.type != type_f)
+        print q
         sessions=[]
-        for sess in type_q:
+        for sess in q:
             if sess.start_time is not None:
-                if sess.start_time < datetime.strptime('19:00', '%H:%M').time():
-                    # add the session to the sessions
-                    sessions.append(sess)
+                if eq_f == '<':
+                    if sess.start_time < datetime.strptime(time_f, '%H:%M').time():
+                        # add the session to the sessions
+                        sessions.append(sess)
+                elif eq_f == '=':
+                    if sess.start_time == datetime.strptime(time_f, '%H:%M').time():
+                        # add the session to the sessions
+                        sessions.append(sess)
+                elif eq_f == '>':
+                    if sess.start_time > datetime.strptime(time_f, '%H:%M').time():
+                        # add the session to the sessions
+                        sessions.append(sess)
         return ConferenceSessionForms(
             items=[self._copySessionToForm(s) for s in sessions]
         )
